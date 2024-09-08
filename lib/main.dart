@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:haikku_flutter_version/routes/ranking_page.dart';
 import 'package:provider/provider.dart';
 import 'models/bottom_navigation_model.dart';
 import 'routes/profile.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     Profile(),
     Home(),
     Settings(),
+    RankingPage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -33,17 +35,21 @@ class MyApp extends StatelessWidget {
             bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
               items: [
-                BottomNavigationBarItem(
+                const BottomNavigationBarItem(
                   icon: Icon(Icons.person),
                   label: 'プロフィール',
                 ),
-                BottomNavigationBarItem(
+                const BottomNavigationBarItem(
                   icon: Icon(Icons.home),
                   label: 'ホーム',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.settings),
                   label: '設定',
+                ),
+                const BottomNavigationBarItem(
+                  icon: const Icon(Icons.align_horizontal_center),
+                  label: 'ランキング',
                 ),
               ],
               currentIndex: model.currentIndex,
